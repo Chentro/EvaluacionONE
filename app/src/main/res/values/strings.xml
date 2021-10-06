@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">APP Censo</string>
+    <string-array name="Genero">
+        <item>...</item>
+        <item>HOMBRE</item>
+        <item>MUJER</item>
+    </string-array>
+
+</resources>
