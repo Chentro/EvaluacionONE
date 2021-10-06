@@ -36,7 +36,11 @@ public class AgregarCenso extends AppCompatActivity {
         Edad = Integer.toString(Integer.parseInt(txt_Eda.getText().toString()));
         Genero = txt_Gen.getSelectedItem().toString();
 
-        if ((Nombre!=null) && (Edad!=null) && (Genero != "...")){
+        if (Nombre.equals("") && Edad.equals("") && Genero.equals("...")) {
+            Toast.makeText(getApplicationContext(), "Debe completar todos los campos", Toast.LENGTH_LONG).show();
+        }
+
+        else if ((Nombre!=null) && (Edad!=null) && (Genero != "...")){
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setTitle("Advertencia");
             builder.setMessage("Estas seguro de continuar?");
@@ -56,9 +60,6 @@ public class AgregarCenso extends AppCompatActivity {
             });
             AlertDialog dialog = builder.create();
             dialog.show();
-        }
-        else if (Nombre.equals("") && Edad.equals("") && Genero.equals("...")) {
-            Toast.makeText(getApplicationContext(), "Debe completar todos los campos", Toast.LENGTH_LONG).show();
         }
     }
 }
